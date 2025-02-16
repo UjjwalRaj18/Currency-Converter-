@@ -21,12 +21,15 @@ Lets users input an amount, choose source and target currencies, and view the co
 Includes history tracking of previous conversions.
 
 3. ConversionHistoryWindow Class
+
 A secondary window that displays the conversion history.
 
 4. Conversion Logic
+   
 The calculate_conversion method computes the converted amount based on the provided source and target currencies.
 
 5.Requirements
+
 Python 3.x
 requests library
 tkinter library (included with standard Python installations)
