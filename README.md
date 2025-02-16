@@ -3,8 +3,11 @@ This application allows users to convert between different currencies based on r
 
 # Features
 Convert between any two currencies.
+
 Display live exchange rates.
-display the conversion history (in the making) 
+
+display the conversion history.
+
 Input validation for the amount field to ensure only numeric values are entered.
 # Components
 The project consists of several key components:
