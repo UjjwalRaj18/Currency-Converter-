@@ -35,3 +35,7 @@ Python 3.x
 requests library
 
 tkinter library (included with standard Python installations)
+
+# Run the Application 
+
+python3 currency_converter.py
