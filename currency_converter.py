@@ -98,8 +98,9 @@ class CurrencyConverterApp(tk.Tk):
     def add_buttons(self):
         self.convert_button = Button(self.main_frame, text="Convert", fg="black", command=self.convert_currency, font=('courier', 12, 'bold'))
         self.convert_button.grid(row=6, column=0, columnspan=2, pady=15)
+        self.history_button = Button(self.main_frame, text="View History", fg="black", command=self.view_history, font=('courier', 12, 'bold'))
+        self.history_button.grid(row=7, column=0, columnspan=2, pady=15)
 
-        
     def convert_currency(self):
         amount = float(self.amount_input_field.get())
         source_currency = self.source_currency_var.get()
@@ -110,7 +111,7 @@ class CurrencyConverterApp(tk.Tk):
 
         self.converted_amount_display.config(text=str(converted_amount))
 
-        user_name = self.user_name_entry.get()
+        user_name = "User"  # You can customize the user name input if needed
 
         self.add_to_history(user_name, source_currency, target_currency, amount, converted_amount)
 
@@ -128,9 +129,16 @@ class CurrencyConverterApp(tk.Tk):
         else:
             self.conversion_history = [history_record]
 
+    def view_history(self):
+        if hasattr(self, 'conversion_history'):
+            history_window = ConversionHistoryWindow(self, self.conversion_history)
+            history_window.grab_set()
+        else:
+            self.conversion_history = []
+            print("No history available.")
 
 if __name__ == '__main__':
-    api_url = 'https://api.exchangerate-api.com/v4/latest/USD'
+    api_url = 'https://api.exchangerate-api.com/v4/latest/CAD'
     rate_fetcher = CurrencyRateFetcher(api_url)
     app = CurrencyConverterApp(rate_fetcher)
     app.mainloop()
