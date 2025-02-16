@@ -31,5 +31,7 @@ The calculate_conversion method computes the converted amount based on the provi
 5.Requirements
 
 Python 3.x
+
 requests library
+
 tkinter library (included with standard Python installations)
