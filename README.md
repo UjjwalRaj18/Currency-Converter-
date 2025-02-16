@@ -37,4 +37,6 @@ tkinter library (included with standard Python installations)
 
 # Run the Application 
 
-python3 currency_converter.py
+--terminal 
+
+python3 currency_converter.py 
